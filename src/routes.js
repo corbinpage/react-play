@@ -6,6 +6,7 @@ import Full from './containers/Full/'
 import Simple from './containers/Simple/'
 
 import Charts from './views/Charts/'
+import Feed from './views/Feed/'
 import Dashboard from './views/Dashboard/'
 import Buttons from './views/Components/Buttons/'
 import Cards from './views/Components/Cards/'
@@ -46,6 +47,7 @@ export default (
       </Route>
       <Route path="widgets" name="Widgets" component={Widgets}/>
       <Route path="charts" name="Charts" component={Charts}/>
+      <Route path="feed" name="Feed" component={Feed}/>
     </Route>
     <Route path="pages/" name="Pages" component={Simple}>
       <IndexRoute component={Page404}/>
