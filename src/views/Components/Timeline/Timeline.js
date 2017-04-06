@@ -1,7 +1,43 @@
 import React, { Component } from 'react';
 import styles from './timeline.css';
+import TimelineCard from '../TimelineCard';
 
 class Timeline extends Component {
+  constructor(props) {
+    super(props);
+    this.renderTimelineCards = this.renderTimelineCards.bind(this);
+    this.state = {
+      collapse: false,
+      status: 'Closed',
+      timelineCards: [
+        {
+          block: "1"
+        },
+        {
+          block: "2"
+        },
+        {
+          block: "3"
+        }
+      ]
+    };
+  }
+
+  renderTimelineCards() {
+    let children = this.state.timelineCards.map((card) => {
+      console.log(card);
+      return (
+        <TimelineCard data={ card } />
+      )
+    })
+
+    console.log(children);
+
+    return children;
+  }
+
+
+
   render() {
     return (
       <div className="container">
@@ -9,6 +45,8 @@ class Timeline extends Component {
           <h1 id="timeline">Timeline</h1>
         </div>
         <ul className="timeline">
+          <TimelineCard />
+          { this.renderTimelineCards() }
           <li>
             <div className="timeline-badge">
               <i className="glyphicon glyphicon-check"></i>

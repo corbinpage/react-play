@@ -133,6 +133,11 @@
   background-color: #5bc0de !important;
 }
 
+
+.timeline > li .timeline-panel > a {
+  cursor: pointer;
+}
+
 .timeline-title {
   margin-top: 0;
   color: inherit;
