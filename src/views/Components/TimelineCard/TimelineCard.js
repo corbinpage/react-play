@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Collapse, Form, FormGroup, Label, Input } from 'reactstrap';
+import styles from './timelineCard.css';
+import { Collapse } from 'reactstrap';
 
 class Timeline extends Component {
   constructor(props) {
@@ -52,46 +53,48 @@ class Timeline extends Component {
         <div className="timeline-badge warning">
           <i className="fa fa-bolt fa-md"></i>
         </div>
-        <div className="timeline-panel">
-          <a onClick={ this.toggle }>
-            <div className="timeline-heading">
-              <h4 className="timeline-title">{ this.state.title }</h4>
-              <div className="form-group row">
-                <label className="col-2 col-form-label"> <strong>From:</strong> </label>
-                <div className="col-10">
-                  <p className="form-control-static">
-                    { this.state.from } </p>
-                </div>
-                <label className="col-2 col-form-label"> <strong>To:</strong> </label>
-                <div className="col-10">
-                  <p className="form-control-static">
-                    { this.state.to } </p>
-                </div>
-                <label className="col-2 col-form-label"> <strong>Value:</strong> </label>
-                <div className="col-10">
-                  <p className="form-control-static">
-                    { this.state.valueUSD } </p>
-                </div>
-              </div>
-              <p> <small className="text-muted"><i className="glyphicon glyphicon-time"></i> { this.state.timeStamp }</small> </p>
-            </div>
-            <Collapse isOpen={ !this.state.collapse }>
-              <div className="timeline-body">
+        <div className="timeline-container">
+          <div className="timeline-panel">
+            <a onClick={ this.toggle }>
+              <div className="timeline-heading">
+                <h4 className="timeline-title">{ this.state.title }</h4>
                 <div className="form-group row">
-                  <label className="col-2 col-form-label"> <strong>Fee:</strong> </label>
+                  <label className="col-2 col-form-label"> <strong>From:</strong> </label>
                   <div className="col-10">
                     <p className="form-control-static">
-                      { this.state.gasCumulative } </p>
+                      { this.state.from } </p>
                   </div>
-                  <label className="col-2 col-form-label"> <strong>Data:</strong> </label>
+                  <label className="col-2 col-form-label"> <strong>To:</strong> </label>
                   <div className="col-10">
                     <p className="form-control-static">
-                      { this.state.inputData } </p>
+                      { this.state.to } </p>
+                  </div>
+                  <label className="col-2 col-form-label"> <strong>Value:</strong> </label>
+                  <div className="col-10">
+                    <p className="form-control-static">
+                      { this.state.valueUSD } </p>
                   </div>
                 </div>
+                <p> <small className="text-muted"><i className="glyphicon glyphicon-time"></i> { this.state.timeStamp }</small> </p>
               </div>
-            </Collapse>
-          </a>
+              <Collapse isOpen={ !this.state.collapse }>
+                <div className="timeline-body">
+                  <div className="form-group row">
+                    <label className="col-2 col-form-label"> <strong>Fee:</strong> </label>
+                    <div className="col-10">
+                      <p className="form-control-static">
+                        { this.state.gasCumulative } </p>
+                    </div>
+                    <label className="col-2 col-form-label"> <strong>Data:</strong> </label>
+                    <div className="col-10">
+                      <p className="form-control-static">
+                        { this.state.inputData } </p>
+                    </div>
+                  </div>
+                </div>
+              </Collapse>
+            </a>
+          </div>
         </div>
       </li>
     )
